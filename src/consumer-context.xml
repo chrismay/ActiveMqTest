@@ -9,7 +9,7 @@
   <amq:queue id="destination"  physicalName="org.apache.activemq.spring.Test.spring.embedded"/>
 
   <!-- JMS ConnectionFactory to use, configuring the embedded broker using XML -->
-  <amq:connectionFactory id="jmsFactory" brokerURL="tcp://localhost:61616"/>
+  <amq:connectionFactory id="jmsFactory" brokerURL="failover:(tcp://localhost:61616)?randomize=false"/>
   
 
 

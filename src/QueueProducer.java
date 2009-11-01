@@ -20,6 +20,11 @@ public class QueueProducer {
 
 	public void queueStuff() {
 		for (int i = 0; i <= 100; i++) {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			final int j = i;
 			System.out.println("queueing message " +i);
 			template.send(this.q, new MessageCreator() {
